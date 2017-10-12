@@ -78,10 +78,10 @@ From this, we know we need a data store named task, and that we will look it up 
 
 The api would look like:
 
-getTask(id) - Task
-getTasks(state) - [Task]
-completeTask(id) - Boolean
-uncompleteTask(id) - Boolean
+getTask(id) - Task  
+getTasks(state) - [Task]  
+completeTask(id) - Boolean  
+uncompleteTask(id) - Boolean  
 
 The REST or GraphQL api implementations, I'll leave to your imagination.
 
