@@ -1,0 +1,18 @@
+singular: Task
+plural: Tasks
+fields:
+  task:
+    type: string
+  is_complete:
+    type: boolean
+events:
+  complete:
+    when:
+      - is_complete: false
+    then:
+      - set: { is_complete: true }
+  incomplete:
+    when:
+      - is_complete: true
+    then:
+      - set: { is_complete: false }

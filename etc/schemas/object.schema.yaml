@@ -1,0 +1,27 @@
+# JSON Schema file
+properties:
+  singular:
+    type: string
+    description: Singular form of the object name
+  plural:
+    type: string
+    description: Plural form of the object name
+  fields:
+    type: object
+    description: Valid field definitions
+    additionalProperties:
+      type: object
+  events:
+    type: object
+    description: A named list of events this object sees
+    additionalProperties:
+      type: object
+      description: An event description, containing WHEN to run it, and THEN what to do
+      properties:
+        when:
+          type: object
+        then:
+          type: object
+required:
+  - singular
+  - plural
