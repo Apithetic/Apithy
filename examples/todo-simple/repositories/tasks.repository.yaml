@@ -1,0 +1,13 @@
+name: Tasks
+objects:
+  task:
+    src: ../objects/task.object.yaml
+    order_by:
+      - task: desc
+    queries:
+      getComplete:
+        where:
+          is_completed: true
+      getIncomplete:
+        where:
+          is_completed: false

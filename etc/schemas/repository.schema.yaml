@@ -1,0 +1,45 @@
+# JSON Schema file
+properties:
+  name:
+    type: string
+    description: The name of the repository
+  objects:
+    type: object
+    description: A named list of objects and their configurations in the repository
+    additionalProperties:
+      type: object
+      description: An object configuration
+      properties:
+        src:
+          type: string
+          descrition: Relative file path of where to find the object's definition
+        order_by:
+          type: array
+          items:
+            type: object
+            additionalProperties:
+              type: string
+              enum:
+                - asc
+                - desc
+        queries:
+          type: object
+          additionalProperties:
+            type: object
+            description: Query definition
+            properties:
+              where:
+                additionalProperties:
+                  type: [ string, boolean ]
+              order_by:
+                type: array
+                items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                    enum:
+                      - asc
+                      - desc
+required:
+  - name
+  - objects
